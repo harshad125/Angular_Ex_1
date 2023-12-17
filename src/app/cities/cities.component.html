@@ -27,7 +27,7 @@
                     <td>{{c.city}}</td>
                     <td>{{c.country}}</td>
                     <td>{{c.population}}</td>
-                    <td><a href="#" class="btn btn-primary">ViewDetails</a></td>
+                    <td><a [routerLink]="['/cities',c.id]" class="btn btn-primary">ViewDetails</a></td>
                 </tr>
             </tbody>
           </table>

@@ -12,6 +12,7 @@ import { CitiesComponent } from './cities/cities.component';
 import { UserdetailsComponent } from './users/userdetails/userdetails.component';
 import { ProductdetailsComponent } from './products/productdetails/productdetails.component';
 import { CitydetailsComponent } from './cities/citydetails/citydetails.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CitydetailsComponent } from './cities/citydetails/citydetails.component
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

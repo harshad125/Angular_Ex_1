@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { User } from 'src/Model/user';
 import { UserService } from 'src/services/user.service';
@@ -13,6 +14,13 @@ export class UserdetailsComponent implements OnInit {
   userId!: number;
   userData!: User;
 
+  Uname: string = '';
+  Umobile: number = 0;
+  Uemail: string = ''
+  Uage: number = 0
+  Uaddress: string = ""
+  @ViewChild('registrationform') form!: NgForm
+
   constructor(
     private route: ActivatedRoute,
     private userService: UserService // Your user service
@@ -26,14 +34,16 @@ export class UserdetailsComponent implements OnInit {
     this.userService.getUserById(this.userId).then((userdata: User) => {
       this.userData = userdata;
       console.log(this.userData)
+      this.form.setValue({
+        uname: this.userData.name,
+        umobile: this.userData.mobile,
+        uemail: this.userData.email,
+        uaddress: this.userData.address
+      })
+
     })
-
   }
-
-
-
-
-
-
-
+  onsubmitclick() {
+    
+  }
 }
