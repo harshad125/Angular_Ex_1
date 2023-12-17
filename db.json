@@ -1,0 +1,188 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name":"Alice",
+            "email": "alice@example.com",
+            "password": "password123",
+            "mobile": 9897654529,
+            "address": "123 Main St"
+        },
+        {
+            "id": 2,
+            "name": "Bob",
+            "email": "bob@example.com",
+            "password": "securePassword",
+            "mobile": 9876756459,
+            "address": "456 Elm St"
+        },
+        {
+           "id": 3,
+           "name": "Charlie",
+           "email": "charlie@example.com",
+           "password": "strongPassword",
+           "mobile": 9887675790,
+           "address": "789 Oak St"
+        },
+        {
+            "id": 4,
+            "name": "Diana",
+            "email": "diana@example.com",
+            "password": "dianaPassword",
+            "mobile": 9878899078,
+            "address": "246 Pine St"
+        },
+        {
+            "id": 5,
+            "name": "Eva",
+            "email": "eva@example.com",
+           "password": "evaSecurePass",
+            "mobile": 7889605789,
+            "address": "135 Cedar St"
+        }
+    ],
+    "products":[
+        {
+            "id": 1,
+            "name": "Product 1",
+            "price": 19.99,
+            "category": "Electronics",
+            "stock": 50
+        },
+        {
+            "id": 2,
+            "name": "Product 2",
+            "price": 29.99,
+            "category": "Clothing",
+            "stock": 75
+        },
+        {
+            "id": 3,
+            "name": "Product 3",
+            "price": 9.99,
+            "category": "Home & Kitchen",
+            "stock": 100
+        },
+        {
+            "id": 4,
+            "name": "Product 4",
+            "price": 49.99,
+            "category": "Beauty",
+            "stock": 30
+        },
+        {
+            "id": 5,
+            "name": "Product 5",
+            "price": 14.99,
+            "category": "Sports",
+            "stock": 60
+        },
+        {
+            "id": 6,
+            "name": "Product 6",
+            "price": 39.99,
+            "category": "Electronics",
+            "stock": 25
+        },
+        {
+            "id": 7,
+            "name": "Product 7",
+            "price": 59.99,
+            "category": "Clothing",
+            "stock": 45
+        },
+        {
+            "id": 8,
+            "name": "Product 8",
+            "price": 24.99,
+            "category": "Home & Kitchen",
+            "stock": 80
+        },
+        {
+            "id": 9,
+            "name": "Product 9",
+            "price": 19.99,
+            "category": "Beauty",
+            "stock": 55
+        },
+        {
+            "id": 10,
+            "name": "Product 10",
+            "price": 12.99,
+            "category": "Sports",
+            "stock": 70
+        }
+
+    ],
+    "cities":[
+        {
+            "id":1,
+            "city": "New York City",
+            "country": "United States",
+            "population": 8537673
+        },
+        {
+            "id":2,
+            "city": "Tokyo",
+            "country": "Japan",
+            "population": 9273000
+                    
+        },
+        {
+            "id":3,
+            "city": "London",
+            "country": "United Kingdom",
+            "population": 8982000
+        
+        },
+        {
+            "id":4,
+            "city": "Paris",
+            "country": "France",
+            "population": 2148000
+            
+        },
+        {
+            "id":5,
+            "city": "Beijing",
+            "country": "China",
+            "population": 21540000
+    
+        },
+        {
+            "id":6,
+            "city": "Rio de Janeiro",
+            "country": "Brazil",
+            "population": 6748000
+            
+        },
+        {
+            "id":7,
+            "city": "Mumbai",
+            "country": "India",
+            "population": 18410000
+            
+        },
+        {
+            "id":8,
+            "city": "Sydney",
+            "country": "Australia",
+            "population": 5312000
+            
+        },
+        {
+            "id":9,
+            "city": "Cairo",
+            "country": "Egypt",
+            "population": 20010000
+            
+        },
+        {
+            "id":10,
+            "city": "Moscow",
+            "country": "Russia",
+            "population": 12500000
+            
+        }
+    ]
+    }
