@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- <p #temp>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem, nisi.</p> -->
+        <div class="header text-center">
+          <h3>User Details</h3>
+        </div>
+        <form class="row g-3" (ngSubmit)="onsubmitclick()" #registrationform="ngForm">
+          <div class="col-md-6">
+            <label for="inputEmail1" class="form-label">Name</label>
+            <input type="text" class="form-control" id="inputEmail1" name="uname" [(ngModel)]="Uname" ngModel required
+              #fname="ngModel">
+            <div>
+              <small *ngIf="fname.invalid && fname.touched" class="text-danger">*name is requied filed</small>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <label for="inputEmail2" class="form-label">Mobile</label>
+            <input type="number" class="form-control" id="inputEmail2" name="umobile" [(ngModel)]="Umobile" ngModel required
+              #mname="ngModel">
+            <div>
+              <small *ngIf="mname.invalid && mname.touched" class="text-danger">*mobile is requied filed</small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" name="uemail" [(ngModel)]="Uemail" ngModel required
+              email #ename="ngModel">
+            <div>
+              <small *ngIf="ename.invalid && ename.touched" class="text-danger">*email is requied filed</small>
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="uaddress"
+              [(ngModel)]="Uaddress" ngModel>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" [disabled]="fname.invalid || mname.invalid || ename.invalid">Submit</button>
+          </div>
+        </form>
+      </div>
+</body>
+</html>

@@ -7,6 +7,7 @@ import { CitiesComponent } from './cities/cities.component';
 import { UserdetailsComponent } from './users/userdetails/userdetails.component';
 import { ProductdetailsComponent } from './products/productdetails/productdetails.component';
 import { CitydetailsComponent } from './cities/citydetails/citydetails.component';
+import { UserupdateComponent } from './users/userupdate/userupdate.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,13 @@ const routes: Routes = [
   {
     path:"users",
     component:UsersComponent
+  },{
+    path:"users/add",
+    component:UserdetailsComponent
+  },
+  {
+    path:"users/delete/:id",
+    component:UsersComponent
   },
   {
     path:"products",
@@ -31,7 +39,7 @@ const routes: Routes = [
   },
   {
     path:"users/:id",
-    component:UserdetailsComponent
+    component:UserupdateComponent
   },{
     path:"products/:id",
     component:ProductdetailsComponent

@@ -3,47 +3,95 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { User } from 'src/Model/user';
 import { UserService } from 'src/services/user.service';
-
+import { Location } from '@angular/common';
+import { Route, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-userdetails',
   templateUrl: './userdetails.component.html',
   styleUrls: ['./userdetails.component.css'],
   providers: [UserService]
 })
-export class UserdetailsComponent implements OnInit {
-  userId!: number;
-  userData!: User;
+export class UserdetailsComponent  {
+  
 
-  Uname: string = '';
+  newuser: User = {
+    id: 0,
+    name: "",
+    mobile: 0,
+    email: "",
+    password: "",
+    address: ""
+  };
+  Uname: string = "";
   Umobile: number = 0;
-  Uemail: string = ''
-  Uage: number = 0
-  Uaddress: string = ""
+  Uemail: string = "";
+  Uaddress: string = "";
+  Passname: string = "";
+
+
+
   @ViewChild('registrationform') form!: NgForm
 
-  constructor(
-    private route: ActivatedRoute,
-    private userService: UserService // Your user service
-  ) {
+  constructor( private route: ActivatedRoute, private userService: UserService, private location: Location) {
+   
   };
-  ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      this.userId = params['id'];
+ 
 
-    });
-    this.userService.getUserById(this.userId).then((userdata: User) => {
-      this.userData = userdata;
-      console.log(this.userData)
-      this.form.setValue({
-        uname: this.userData.name,
-        umobile: this.userData.mobile,
-        uemail: this.userData.email,
-        uaddress: this.userData.address
-      })
-
-    })
+  goBack(): void {
+    this.location.back();
   }
+
   onsubmitclick() {
-    
+    // this.newuser.id = this.userData.id;
+    this.newuser.name = this.Uname;
+    this.newuser.email = this.Uemail;
+    this.newuser.mobile = this.Umobile;
+    this.newuser.password = this.Passname;
+    this.newuser.address = this.Uaddress;
+
+    if (!this.newuser) { return; }
+    this.userService.adduser(this.newuser).subscribe({
+      next: (val: any) => {
+        console.log("add data" + val)
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    })
+
+    // if (this.userData) {
+    //   this.userService.updateuser(this.userData)
+    //     .subscribe(updatedData => {
+    //       console.log('Data updated:', updatedData);
+    //       // Optionally, update local jsonData with updatedData
+    //       this.userData = updatedData;});
+    // }
   }
 }
+
+// this.route.params.subscribe((params: Params) => {
+//   this.userId = params['id'];
+
+// });
+// this.userService.getUserById(this.userId).then((userdata: User) => {
+//   this.userData = userdata;
+//   console.log(this.userData)
+//   this.form.setValue({
+//     uname: this.userData.name,
+//     umobile: this.userData.mobile,
+//     uemail: this.userData.email,
+//     uaddress: this.userData.address
+//   })
+
+// })
+
+// if(!this.newuser){ return ;}
+// this.userService.adduser(this.newuser).subscribe({
+//   next:(val:any)=>{
+//       console.log("add data"+val)
+//   },
+//   error:(err:any)=>{
+//     console.log(err);
+//   }
+// })

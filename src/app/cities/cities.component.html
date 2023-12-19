@@ -13,7 +13,7 @@
         <div class="table-responsive">
           <table class="table table-striped table-bordered">
             <thead class="thead-dark">
-              <tr class="text-center">
+              <tr class="text-center bg-dark text-white">
                 <th>ID</th>
                 <th>City</th>
                 <th>Country</th>
@@ -22,7 +22,7 @@
               </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let c of listcity">
+                <tr class="text-center" *ngFor="let c of listcity">
                     <th scope="row">{{c.id}}</th>
                     <td>{{c.city}}</td>
                     <td>{{c.country}}</td>

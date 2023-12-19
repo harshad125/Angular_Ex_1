@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="container justify-content-between">
-        <button type="button" class="btn btn-primary" routerLink="users">Users</button>
-        <button type="button" class="btn btn-primary" routerLink="products">Products</button>
-        <button type="button" class="btn btn-primary" routerLink="cities">City</button>
-      </div>
+    <div class="container my-3">
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../../assets/users.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Users</h4>
+                        <button type="button" class="btn btn-primary" routerLink="users">Users</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../../assets/product.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Product</h4>
+                        <button type="button" class="btn btn-primary" routerLink="products">Products</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../../assets/city.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <button type="button" class="btn btn-primary" routerLink="cities">City</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

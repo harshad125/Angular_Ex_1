@@ -13,6 +13,8 @@ import { UserdetailsComponent } from './users/userdetails/userdetails.component'
 import { ProductdetailsComponent } from './products/productdetails/productdetails.component';
 import { CitydetailsComponent } from './cities/citydetails/citydetails.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UserupdateComponent } from './users/userupdate/userupdate.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { FormsModule } from '@angular/forms';
     CitiesComponent,
     UserdetailsComponent,
     ProductdetailsComponent,
-    CitydetailsComponent
+    CitydetailsComponent,
+    UserupdateComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
