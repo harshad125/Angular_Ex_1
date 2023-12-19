@@ -54,19 +54,12 @@ export class UserdetailsComponent  {
     this.userService.adduser(this.newuser).subscribe({
       next: (val: any) => {
         console.log("add data" + val)
+        this.goBack();
       },
       error: (err: any) => {
         console.log(err);
       }
     })
-
-    // if (this.userData) {
-    //   this.userService.updateuser(this.userData)
-    //     .subscribe(updatedData => {
-    //       console.log('Data updated:', updatedData);
-    //       // Optionally, update local jsonData with updatedData
-    //       this.userData = updatedData;});
-    // }
   }
 }
 

@@ -17,7 +17,7 @@
             <div class="col-md-6">
                 <label for="inputEmail1" class="form-label">City</label>
                 <input type="text" class="form-control" id="inputEmail1" name="cname" [(ngModel)]="Cname" ngModel
-                    required #fname="ngModel">
+                    required #fname="ngModel" readonly >
                 <div>
                     <small *ngIf="fname.invalid && fname.touched" class="text-danger">*name is requied filed</small>
                 </div>
@@ -25,7 +25,7 @@
             <div class="col-md-6">
                 <label for="inputEmail2" class="form-label">Country</label>
                 <input type="text" class="form-control" id="inputEmail2" name="ccountry" [(ngModel)]="Ccountry" ngModel
-                    required #mname="ngModel">
+                    required #mname="ngModel" readonly >
                 <div>
                     <small *ngIf="mname.invalid && mname.touched" class="text-danger">*price is requied filed</small>
                 </div>
@@ -33,14 +33,13 @@
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Population</label>
                 <input type="number" class="form-control" id="inputEmail4" name="cpopulation" [(ngModel)]="Cpopulation"
-                    ngModel required #ename="ngModel">
+                    ngModel required #ename="ngModel" readonly >
                 <div>
                     <small *ngIf="ename.invalid && ename.touched" class="text-danger">*category is requied filed</small>
                 </div>
             </div>
             <div class="col-12">
-                <button type="submit" class="btn btn-primary"
-                    [disabled]="fname.invalid || mname.invalid || ename.invalid ">Sign in</button>
+                <button type="submit" class="btn btn-primary" disabled>Save</button>
             </div>
         </form>
     </div>

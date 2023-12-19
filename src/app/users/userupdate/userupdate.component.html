@@ -6,12 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-4">
         <!-- <p #temp>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem, nisi.</p> -->
         <div class="header text-center">
           <h3>User Details</h3>
         </div>
-        <form class="row g-3" (ngSubmit)="onsubmitclick()" #registrationform="ngForm">
+        <form class="row g-3 mt-4" (ngSubmit)="onsubmitclick()" #registrationform="ngForm">
           <div class="col-md-6">
             <label for="inputEmail1" class="form-label">Name</label>
             <input type="text" class="form-control" id="inputEmail1" name="uname" [(ngModel)]="Uname" ngModel required

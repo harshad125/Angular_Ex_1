@@ -8,14 +8,14 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container mt-4">
     <!-- <p #temp>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem, nisi.</p> -->
     <div class="header text-center">
       <h3>User Details</h3>
     </div>
-    <form class="row g-3" (ngSubmit)="onsubmitclick()" #registrationform="ngForm">
+    <form class="row g-3 mt-4" (ngSubmit)="onsubmitclick()" #registrationform="ngForm">
       <div class="col-md-6">
-        <label for="inputEmail1" class="form-label">Name</label>
+        <label for="inputEmail1" class="form-label"><span class="text-danger">*</span>Name</label>
         <input type="text" class="form-control" id="inputEmail1" name="uname" [(ngModel)]="Uname" ngModel required
           #fname="ngModel">
         <div>
@@ -24,7 +24,7 @@
       </div>
       
       <div class="col-md-6">
-        <label for="inputEmail2" class="form-label">Mobile</label>
+        <label for="inputEmail2" class="form-label"><span class="text-danger">*</span>Mobile</label>
         <input type="number" class="form-control" id="inputEmail2" name="umobile" [(ngModel)]="Umobile" ngModel required
           #mname="ngModel">
         <div>
@@ -32,15 +32,16 @@
         </div>
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Email</label>
+        <label for="inputEmail4" class="form-label"><span class="text-danger">*</span>Email</label>
         <input type="email" class="form-control" id="inputEmail4" name="uemail" [(ngModel)]="Uemail" ngModel required
           email #ename="ngModel">
         <div>
-          <small *ngIf="ename.invalid && ename.touched" class="text-danger">*email is requied filed</small>
+          <small  *ngIf="ename.touched && ename.errors && ename.errors['required']" class="text-danger">*User-Email is a required field</small>
+          <small  *ngIf="ename.invalid && ename.errors && ename.errors['email']" class="text-danger">*Enter a valid email address</small>
         </div>
       </div>
       <div class="col-md-6">
-        <label for="inputpassword" class="form-label">Password</label>
+        <label for="inputpassword" class="form-label"><span class="text-danger">*</span>Password</label>
         <input type="password" class="form-control" id="inputpassword" name="passname" [(ngModel)]="Passname" ngModel required
           #pname="ngModel">
         <div>
