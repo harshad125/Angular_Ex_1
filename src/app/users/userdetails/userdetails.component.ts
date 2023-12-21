@@ -13,8 +13,7 @@ import { filter } from 'rxjs/operators';
   providers: [UserService]
 })
 export class UserdetailsComponent  {
-  
-
+    
   newuser: User = {
     id: 0,
     name: "",
@@ -44,22 +43,24 @@ export class UserdetailsComponent  {
 
   onsubmitclick() {
     // this.newuser.id = this.userData.id;
+
+    console.log(this.form)
     this.newuser.name = this.Uname;
     this.newuser.email = this.Uemail;
     this.newuser.mobile = this.Umobile;
     this.newuser.password = this.Passname;
     this.newuser.address = this.Uaddress;
 
-    if (!this.newuser) { return; }
-    this.userService.adduser(this.newuser).subscribe({
-      next: (val: any) => {
-        console.log("add data" + val)
-        this.goBack();
-      },
-      error: (err: any) => {
-        console.log(err);
-      }
-    })
+    // if (!this.newuser) { return; }
+    // this.userService.adduser(this.newuser).subscribe({
+    //   next: (val: any) => {
+    //     console.log("add data" + val)
+    //     this.goBack();
+    //   },
+    //   error: (err: any) => {
+    //     console.log(err);
+    //   }
+    // })
   }
 }
 

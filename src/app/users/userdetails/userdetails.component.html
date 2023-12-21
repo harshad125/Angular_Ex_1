@@ -16,19 +16,31 @@
     <form class="row g-3 mt-4" (ngSubmit)="onsubmitclick()" #registrationform="ngForm">
       <div class="col-md-6">
         <label for="inputEmail1" class="form-label"><span class="text-danger">*</span>Name</label>
-        <input type="text" class="form-control" id="inputEmail1" name="uname" [(ngModel)]="Uname" ngModel required
-          #fname="ngModel">
-        <div>
-          <small *ngIf="fname.invalid && fname.touched" class="text-danger">*name is requied filed</small>
+        <input type="text" class="form-control" id="inputEmail1" name="uname" [(ngModel)]="Uname" ngModel
+          pattern="^[a-zA-Z\s'-]+$" required #fname="ngModel">
+        <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert alert-danger">
+          <div *ngIf="fname.errors?.['required']">
+            Name is required.
+          </div>
+          <div *ngIf="fname.errors?.['pattern']">
+            Invalid Name format
+          </div>
         </div>
       </div>
-      
+
       <div class="col-md-6">
         <label for="inputEmail2" class="form-label"><span class="text-danger">*</span>Mobile</label>
         <input type="number" class="form-control" id="inputEmail2" name="umobile" [(ngModel)]="Umobile" ngModel required
-          #mname="ngModel">
-        <div>
-          <small *ngIf="mname.invalid && mname.touched" class="text-danger">*mobile is requied filed</small>
+          #mname="ngModel" pattern="^[0-9]{10}$">
+        <div *ngIf="mname.invalid && (mname.dirty || mname.touched)" class="alert alert-danger">
+
+          <div *ngIf="mname.errors?.['required']">
+            Mobile is required.
+          </div>
+          <div *ngIf="mname.errors?.['pattern']">
+            Mobile should contain atleast or atmost contain 10 dight
+          </div>
+
         </div>
       </div>
       <div class="col-md-6">
@@ -36,16 +48,19 @@
         <input type="email" class="form-control" id="inputEmail4" name="uemail" [(ngModel)]="Uemail" ngModel required
           email #ename="ngModel">
         <div>
-          <small  *ngIf="ename.touched && ename.errors && ename.errors['required']" class="text-danger">*User-Email is a required field</small>
-          <small  *ngIf="ename.invalid && ename.errors && ename.errors['email']" class="text-danger">*Enter a valid email address</small>
+          <small *ngIf="ename.touched && ename.errors && ename.errors['required']" class="text-danger">*User-Email is a
+            required field</small>
+          <small *ngIf="ename.invalid && ename.errors && ename.errors['email']" class="text-danger">*Enter a valid email
+            address</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="inputpassword" class="form-label"><span class="text-danger">*</span>Password</label>
-        <input type="password" class="form-control" id="inputpassword" name="passname" [(ngModel)]="Passname" ngModel required
-          #pname="ngModel">
+        <input type="password" class="form-control" id="inputpassword" name="passname" [(ngModel)]="Passname" ngModel
+          required #pname="ngModel">
         <div>
-          <small *ngIf="pname.invalid && pname.touched" class="text-danger">*name is requied filed</small>
+          <small *ngIf="pname.invalid && (pname.dirty || pname.touched)" class="text-danger">*name is requied
+            filed</small>
         </div>
       </div>
       <div class="col-12">
@@ -54,7 +69,8 @@
           [(ngModel)]="Uaddress" ngModel>
       </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary" [disabled]="fname.invalid || mname.invalid || ename.invalid">Submit</button>
+        <button type="submit" class="btn btn-primary"
+          [disabled]="fname.invalid || mname.invalid || ename.invalid">Submit</button>
       </div>
     </form>
   </div>

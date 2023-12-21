@@ -12,6 +12,8 @@ import { User } from "src/Model/user";
 export class UserService {
   url = 'http://localhost:3000/users';
 
+  deletelist!:User[];
+
   constructor(private http: HttpClient) { };
 
   //error handling methods

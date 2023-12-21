@@ -25,8 +25,12 @@ export class UsersComponent implements OnInit {
   }
   ondeleteuser(user:User)
   {
+    this.UserService.deletelist=this.listUser.filter(u=>u===user);
     this.listUser = this.listUser.filter(u => u !== user);
-    this.UserService.deleteuser(user.id).subscribe();
+    this.UserService.deleteuser(user.id).subscribe((val)=>{
+      console.log(val);
+      console.log(this.UserService.deletelist)
+    });
     
   }
   onnavigate()

@@ -47,22 +47,6 @@
       "email": "harshad@example.com",
       "password": "123456789",
       "address": "amroli,surat"
-    },
-    {
-      "id": 7,
-      "name": "mayur",
-      "mobile": 9898949596,
-      "email": "mayur@example.com",
-      "password": "123456789",
-      "address": "125 raghuvir society"
-    },
-    {
-      "id": 8,
-      "name": "devang",
-      "mobile": 9898765645,
-      "email": "devang@gmail.com",
-      "password": "devang",
-      "address": "amroli,surat"
     }
   ],
   "products": [

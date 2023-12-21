@@ -6,6 +6,7 @@ import { User } from "src/Model/user";
 
 export class CityService{
     url = 'http://localhost:3000/cities';
+
     async getAllCitys(): Promise<City[]> {
         const data = await fetch(this.url);
         return await data.json() ?? [];
